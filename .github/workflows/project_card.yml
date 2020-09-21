@@ -1,0 +1,16 @@
+name: project card events
+
+on:
+  project_card:
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print job context
+        run: |
+          echo event_name: ${{ github.event_name }}
+          echo action: ${{ github.event.action }}
+          echo project_card.id: ${{ github.event.project_card.id }}
+          echo project_card.column_id: ${{ github.event.project_card.column_id }}
+          echo ref: ${{ github.ref }}
